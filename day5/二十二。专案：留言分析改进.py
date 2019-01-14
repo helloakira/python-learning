@@ -1,5 +1,4 @@
-# 余数 % 1000 == 0 可以弄到1000 2000精准的余数。
-# for 就像一帧一帧的游戏。
+import time
 
 data = []
 count = 0
@@ -15,6 +14,8 @@ with open('../053 reviews.txt', 'r') as f:
 
 word_count = {}
 
+start_time = time.time()
+
 for d in data:
     words = d.split(' ')
     for word in words:
@@ -27,6 +28,10 @@ for word in word_count:
     if word_count[word] > 1000000:
         print(word, word_count[word])
 
+end_time = time.time()
+
+
+print('花了', end_time - start_time, '秒')
 print(len(word_count))
 print(word_count['Tom'])
 
